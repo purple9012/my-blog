@@ -44,7 +44,7 @@ function greet(name) {
 
 ## 링크와 이미지
 
-[내 블로그로 돌아가기](../index.html)
+[내 블로그로 돌아가기](index.html)
 
 ## 구분선
 
