@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>글 - my-blog</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem("theme");
+      var theme = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <p class="site-title"><a href="index.html">my-blog</a></p>
+      <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false">🌙 다크 모드</button>
+    </div>
+  </header>
+
+  <main>
+    <div data-post-content></div>
+  </main>
+
+  <footer class="site-footer">
+    <p>마크다운으로 쓰고, 프레임워크 없이 보여줍니다.</p>
+  </footer>
+
+  <script src="assets/js/markdown.js"></script>
+  <script src="assets/js/posts-data.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/post.js"></script>
+</body>
+</html>
