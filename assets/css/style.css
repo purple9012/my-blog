@@ -75,6 +75,19 @@ a:hover {
   letter-spacing: 0.03em;
 }
 
+.site-header-links {
+  margin: 0.9rem 0 0;
+  font-size: 0.85rem;
+}
+
+.site-header-links a {
+  color: var(--color-text-muted);
+}
+
+.site-header-links a:hover {
+  color: var(--color-accent);
+}
+
 main {
   max-width: var(--content-width);
   margin: 0 auto;

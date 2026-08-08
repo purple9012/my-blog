@@ -1,0 +1,229 @@
+/* 2048 게임 전용 스타일 (보드, 타일, 점수판, 오버레이) */
+/* 색상/폰트는 style.css의 CSS 변수(--color-*, --font-*)만 참조하고 새 hex를 추가하지 않는다 */
+
+.game-2048 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.game-2048-header {
+  text-align: center;
+}
+
+.game-2048-header h1 {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+.game-2048-desc {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* 점수판 */
+.game-2048-scoreboard {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.game-2048-score-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  min-width: 4.5rem;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+}
+
+.game-2048-score-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.game-2048-score-value {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+
+/* 새 게임 / 다시 시작 버튼 */
+.game-2048-new-btn {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  background: transparent;
+  border: 1px solid var(--color-accent);
+  border-radius: 8px;
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.game-2048-new-btn:hover {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* 보드 컨테이너 */
+.game-2048-board-wrap {
+  position: relative;
+  width: min(420px, calc(100vw - 2.5rem));
+  aspect-ratio: 1 / 1;
+}
+
+.game-2048-board {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0.6rem;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.6rem;
+  box-sizing: border-box;
+}
+
+.game-2048-cell {
+  background: var(--color-border);
+  opacity: 0.35;
+  border-radius: 6px;
+}
+
+/* 타일 */
+.game-2048-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--color-text);
+  background: var(--color-bg-elevated);
+  transition: transform 0.12s ease-out, opacity 0.12s ease-out;
+}
+
+.tile-2,
+.tile-4 {
+  background: var(--color-bg-elevated);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.tile-8 {
+  background: color-mix(in srgb, var(--color-accent) 20%, var(--color-bg-elevated));
+  color: var(--color-text);
+}
+
+.tile-16 {
+  background: color-mix(in srgb, var(--color-accent) 32%, var(--color-bg-elevated));
+  color: var(--color-text);
+}
+
+.tile-32 {
+  background: color-mix(in srgb, var(--color-accent) 44%, var(--color-bg-elevated));
+  color: var(--color-text);
+}
+
+.tile-64 {
+  background: color-mix(in srgb, var(--color-accent) 56%, var(--color-bg-elevated));
+  color: var(--color-bg);
+}
+
+.tile-128 {
+  background: color-mix(in srgb, var(--color-accent) 68%, var(--color-bg-elevated));
+  color: var(--color-bg);
+  font-size: 1.2rem;
+}
+
+.tile-256 {
+  background: color-mix(in srgb, var(--color-accent) 78%, var(--color-bg-elevated));
+  color: var(--color-bg);
+  font-size: 1.2rem;
+}
+
+.tile-512 {
+  background: color-mix(in srgb, var(--color-accent) 88%, var(--color-bg-elevated));
+  color: var(--color-bg);
+  font-size: 1.2rem;
+}
+
+.tile-1024 {
+  background: color-mix(in srgb, var(--color-accent) 94%, var(--color-bg-elevated));
+  color: var(--color-bg);
+  font-size: 1.05rem;
+}
+
+.tile-2048 {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-size: 1.05rem;
+}
+
+.tile-super {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-size: 0.95rem;
+}
+
+/* 오버레이 */
+.game-2048-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: color-mix(in srgb, var(--color-bg) 85%, transparent);
+  border-radius: 8px;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.game-2048-overlay[hidden] {
+  display: none;
+}
+
+.game-2048-overlay-msg {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* 데스크톱 확장 */
+@media (min-width: 640px) {
+  .game-2048-header h1 {
+    font-size: 2.3rem;
+  }
+
+  .game-2048-tile {
+    font-size: 1.5rem;
+  }
+
+  .tile-128,
+  .tile-256,
+  .tile-512 {
+    font-size: 1.35rem;
+  }
+
+  .tile-1024,
+  .tile-2048,
+  .tile-super {
+    font-size: 1.2rem;
+  }
+}

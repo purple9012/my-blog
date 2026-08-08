@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2048 - my-blog</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/game-2048.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <p class="site-title"><a href="index.html">my-blog</a></p>
+      <p class="site-tagline">마크다운으로 쓰는 개발 기록</p>
+    </div>
+  </header>
+
+  <main>
+    <p class="post-back-top"><a href="index.html">← 목록으로</a></p>
+
+    <div class="game-2048">
+      <div class="game-2048-header">
+        <h1>2048</h1>
+        <p class="game-2048-desc">방향키(←↑→↓)로 타일을 밀어 같은 숫자를 합치세요.</p>
+      </div>
+
+      <div class="game-2048-scoreboard">
+        <div class="game-2048-score-box">
+          <span class="game-2048-score-label">SCORE</span>
+          <span class="game-2048-score-value" data-score>0</span>
+        </div>
+        <div class="game-2048-score-box">
+          <span class="game-2048-score-label">BEST</span>
+          <span class="game-2048-score-value" data-best>0</span>
+        </div>
+        <button class="game-2048-new-btn" data-new-game>새 게임</button>
+      </div>
+
+      <div class="game-2048-board-wrap">
+        <div class="game-2048-board" data-board>
+          <!-- 16개 셀 배경(고정) + 타일(JS가 grid-row/grid-column으로 배치, CSS 검증용 더미 타일 포함) -->
+          <div class="game-2048-cell"></div>
+          <div class="game-2048-cell"></div>
+          <div class="game-2048-cell"></div>
+          <div class="game-2048-cell"></div>
+          <div class="game-2048-cell"></div>
+          <div class="game-2048-cell"></div>
+          <div class="game-2048-cell"></div>
+          <div class="game-2048-cell"></div>
+          <div class="game-2048-cell"></div>
+          <div class="game-2048-cell"></div>
+          <div class="game-2048-cell"></div>
+          <div class="game-2048-cell"></div>
+          <div class="game-2048-cell"></div>
+          <div class="game-2048-cell"></div>
+          <div class="game-2048-cell"></div>
+          <div class="game-2048-cell"></div>
+          <div class="game-2048-tile tile-2" style="grid-row: 1; grid-column: 1;">2</div>
+          <div class="game-2048-tile tile-4" style="grid-row: 1; grid-column: 2;">4</div>
+          <div class="game-2048-tile tile-8" style="grid-row: 2; grid-column: 3;">8</div>
+          <div class="game-2048-tile tile-2048" style="grid-row: 3; grid-column: 4;">2048</div>
+        </div>
+        <div class="game-2048-overlay" data-overlay hidden>
+          <p class="game-2048-overlay-msg" data-overlay-msg></p>
+          <button class="game-2048-new-btn" data-overlay-retry>다시 시작</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>마크다운으로 쓰고, 프레임워크 없이 보여줍니다.</p>
+  </footer>
+
+  <script src="assets/js/game-2048.js" defer></script>
+</body>
+</html>
