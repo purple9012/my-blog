@@ -9,9 +9,13 @@
     return plain.length > 100 ? plain.slice(0, 100) + "…" : plain;
   }
 
-  function renderPostCard(post, meta, body) {
+  function renderPostCard(post, meta, body, index) {
     const li = document.createElement("li");
     li.className = "post-card";
+
+    const number = document.createElement("span");
+    number.className = "post-card-number";
+    number.textContent = String(index + 1).padStart(2, "0");
 
     const link = document.createElement("a");
     link.className = "post-card-link";
@@ -45,6 +49,7 @@
       link.appendChild(tagList);
     }
 
+    li.appendChild(number);
     li.appendChild(link);
     return li;
   }
@@ -66,8 +71,8 @@
       return;
     }
 
-    parsed.forEach(({ post, meta, body }) => {
-      list.appendChild(renderPostCard(post, meta, body));
+    parsed.forEach(({ post, meta, body }, index) => {
+      list.appendChild(renderPostCard(post, meta, body, index));
     });
   }
 

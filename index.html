@@ -5,26 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>my-blog</title>
 <link rel="stylesheet" href="assets/css/style.css">
-<script>
-  (function () {
-    try {
-      var stored = localStorage.getItem("theme");
-      var theme = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      document.documentElement.setAttribute("data-theme", theme);
-    } catch (e) {}
-  })();
-</script>
 </head>
 <body>
   <header class="site-header">
     <div class="site-header-inner">
       <p class="site-title"><a href="index.html">my-blog</a></p>
-      <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false">🌙 다크 모드</button>
+      <p class="site-tagline">마크다운으로 쓰는 개발 기록</p>
     </div>
   </header>
 
   <main>
-    <ul class="post-list" data-post-list></ul>
+    <ol class="post-list" data-post-list></ol>
   </main>
 
   <footer class="site-footer">
@@ -33,7 +24,6 @@
 
   <script src="assets/js/markdown.js"></script>
   <script src="assets/js/posts-data.js"></script>
-  <script src="assets/js/theme.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

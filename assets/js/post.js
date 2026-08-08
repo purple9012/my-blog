@@ -25,6 +25,7 @@
       .join("");
 
     container.innerHTML = `
+      <p class="post-back-top"><a href="index.html">← 목록으로</a></p>
       <article class="post">
         <header class="post-header">
           <h1>${escapeHtml(meta.title || post.slug)}</h1>
