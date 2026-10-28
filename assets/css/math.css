@@ -1,0 +1,390 @@
+/* AI를 위한 수학 - 학습 앱 전용 스타일 (style.css 변수만 사용) */
+
+.math-main {
+  overflow-x: hidden;
+}
+
+.math-page-title {
+  margin: 0 0 1.5rem;
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.math-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin: 0 0 1.5rem;
+  font-size: 0.9rem;
+}
+
+.math-topbar a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  color: var(--color-text-muted);
+}
+
+.math-topbar a:hover {
+  color: var(--color-accent);
+}
+
+.math-progress {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+/* 안내 문구 */
+.math-notice {
+  margin: 0 0 1.25rem;
+  padding: 0.6rem 0.9rem;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 6px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* 단원 카드 */
+.math-unit-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.math-unit-card {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem;
+}
+
+.math-unit-title {
+  margin: 0 0 0.3rem;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  overflow-wrap: anywhere;
+}
+
+.math-unit-summary {
+  margin: 0 0 0.9rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.math-unit-actions,
+.math-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.math-nav {
+  margin-top: 2rem;
+  justify-content: space-between;
+}
+
+/* 버튼 */
+.math-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0.4rem 1rem;
+  background: var(--color-bg-elevated);
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.math-btn:hover {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  text-decoration: none;
+}
+
+.math-btn:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+.math-btn:disabled,
+.math-btn[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.math-btn:disabled:hover,
+.math-btn[disabled]:hover {
+  background: var(--color-bg-elevated);
+  color: var(--color-accent);
+}
+
+.math-btn-primary {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+.math-btn-primary:hover {
+  background: var(--color-text);
+  border-color: var(--color-text);
+}
+
+/* 학습 섹션 */
+.math-section {
+  margin: 0 0 2.2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.math-section:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.math-section-heading {
+  margin: 0 0 0.8rem;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  overflow-wrap: anywhere;
+}
+
+.math-section-body {
+  overflow-wrap: anywhere;
+}
+
+.math-section-body p,
+.math-section-body ul,
+.math-section-body ol {
+  margin: 0.8rem 0;
+}
+
+.math-section-body ul,
+.math-section-body ol {
+  padding-left: 1.5rem;
+}
+
+.math-section-body code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: var(--color-bg-elevated);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+
+.math-section-body table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.math-section-body th,
+.math-section-body td {
+  border: 1px solid var(--color-border);
+  padding: 0.35rem 0.7rem;
+  text-align: left;
+}
+
+/* 예제 / 풀이 토글 */
+.math-example {
+  margin: 1.2rem 0 0;
+  padding: 1rem 1.1rem;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.math-example-label {
+  display: inline-block;
+  margin-bottom: 0.4rem;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.math-example-question {
+  overflow-wrap: anywhere;
+}
+
+.math-toggle {
+  margin-top: 0.7rem;
+}
+
+.math-solution {
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px dashed var(--color-border);
+  color: var(--color-text);
+  overflow-wrap: anywhere;
+}
+
+.math-solution[hidden] {
+  display: none;
+}
+
+/* 퀴즈 */
+.math-question {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  overflow-wrap: anywhere;
+}
+
+.math-choices {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.math-choice {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 44px;
+  padding: 0.5rem 0.9rem;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.math-choice:hover {
+  border-color: var(--color-accent);
+}
+
+.math-choice input[type="radio"] {
+  flex: 0 0 auto;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0;
+  accent-color: var(--color-accent);
+}
+
+.math-choice-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.math-choice.is-selected {
+  border-color: var(--color-accent);
+}
+
+.math-choice.is-correct {
+  border-color: var(--color-accent);
+  border-width: 2px;
+  background: var(--color-bg);
+}
+
+.math-choice.is-wrong {
+  border-style: dashed;
+  border-width: 2px;
+  border-color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+.math-choice.is-disabled {
+  cursor: default;
+}
+
+.math-feedback {
+  margin: 0 0 1rem;
+  padding: 0.8rem 1rem;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-accent);
+  border-radius: 6px;
+}
+
+.math-feedback.is-wrong {
+  border-left-color: var(--color-text-muted);
+}
+
+.math-feedback-result {
+  margin: 0 0 0.4rem;
+  font-weight: 700;
+}
+
+.math-feedback.is-correct .math-feedback-result {
+  color: var(--color-accent);
+}
+
+.math-feedback.is-wrong .math-feedback-result {
+  color: var(--color-text-muted);
+}
+
+.math-explanation {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.math-feedback[hidden] {
+  display: none;
+}
+
+.math-result {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.math-result-score {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--color-accent);
+}
+
+.math-result-message {
+  margin: 0 0 1.2rem;
+  color: var(--color-text-muted);
+}
+
+.math-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+/* 수식 */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  padding: 0.2rem 0;
+}
+
+.katex {
+  font-size: 1.05em;
+}
+
+/* 모바일 */
+@media (max-width: 480px) {
+  .math-page-title {
+    font-size: 1.5rem;
+  }
+
+  .math-unit-actions .math-btn,
+  .math-nav .math-btn {
+    flex: 1 1 auto;
+  }
+}
